@@ -1,0 +1,5 @@
+# Teams, never people.
+*               @public-software/maint-business
+/interfaces/    @public-software/ring-platform
+/CATALOG.toml   @public-software/core
+/PROVENANCE.md  @public-software/core

@@ -1,0 +1,9 @@
+name: mirror
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  mirror:
+    if: ${{ vars.FORGE_MIRROR_URL != '' }}
+    uses: public-software/.github/.github/workflows/mirror.yml@main
+    secrets: inherit

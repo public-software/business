@@ -1,0 +1,24 @@
+# Machine-readable entry for this repository. Aggregated into public-software/catalog.
+# Edit here; `pub catalog sync` propagates description, topics and custom properties to GitHub.
+
+[repo]
+name        = "business"
+ring        = "domain"          # spine | platform | system | domain | standards
+layers      = ["L16"]
+wave        = 2
+tier        = "incubating"        # incubating | stable | core | archived
+maintainers = ["maint-business"]
+summary     = "Accounting core, ERP, CRM, billing/e-invoicing, HR {{PURPOSE}} payroll, e-commerce, helpdesk, BI, PLM/MES."
+
+# One [[component]] per crate, app or service this workspace publishes.
+# planned: pub-ledger · pub-erp · pub-crm · pub-billing · pub-hr · pub-shop · pub-desk · pub-bi · pub-plm
+#
+# [[component]]
+# crate     = "pub-business-example"
+# kind      = "lib"                # lib | app | service | plugin | spec
+# ledger    = "<ledger entry name>"
+# readiness = "none"               # shipped | partial | seed | none
+# effort    = 3
+# specs     = []
+# provides  = ["public:area/iface@1"]
+# requires  = []

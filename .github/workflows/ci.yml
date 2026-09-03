@@ -1,0 +1,8 @@
+name: ci
+on:
+  push: { branches: [main, "release/**"] }
+  pull_request:
+jobs:
+  suite:
+    uses: public-software/.github/.github/workflows/rust.yml@main
+    secrets: inherit

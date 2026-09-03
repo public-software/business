@@ -1,0 +1,19 @@
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.90"
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/public-software/business"
+homepage = "https://publicsoftware.dev/business"
+authors = ["Public Software contributors"]
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+all = "warn"

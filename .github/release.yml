@@ -1,0 +1,14 @@
+changelog:
+  exclude:
+    labels: [changelog/skip]
+  categories:
+    - title: Added
+      labels: [changelog/added]
+    - title: Changed
+      labels: [changelog/changed, breaking-change]
+    - title: Fixed
+      labels: [changelog/fixed]
+    - title: Security
+      labels: [changelog/security]
+    - title: Provenance
+      labels: [changelog/provenance]
