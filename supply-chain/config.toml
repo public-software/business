@@ -1,0 +1,13 @@
+# cargo-vet: a third-party crate enters the build only once someone we trust has audited it.
+# The imports below are the shared audit pool. Adding or bumping a dependency: run `cargo vet` locally
+# (it pulls the matching audits into imports.lock), audit or exempt what is left (`cargo vet suggest`),
+# and commit supply-chain/. CI runs `cargo vet --locked`, so a crate no audit covers fails the pull request.
+
+[cargo-vet]
+version = "0.10"
+
+[imports.mozilla]
+url = "https://raw.githubusercontent.com/mozilla/supply-chain/main/audits.toml"
+
+[imports.google]
+url = "https://raw.githubusercontent.com/google/supply-chain/main/audits.toml"

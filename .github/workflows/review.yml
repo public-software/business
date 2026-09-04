@@ -1,0 +1,19 @@
+# The agent review gate: "suite / policy" is a required check on main. Pull requests get the agent pass and the
+# deterministic checks; the merge queue reuses the verdict recorded on the pull request.
+name: review
+on:
+  pull_request: { types: [opened, synchronize, reopened, ready_for_review] }
+  merge_group:
+permissions:
+  contents: read   # the reusable workflow raises pull-requests: write on the one job that comments
+concurrency:
+  group: review-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true   # a new push supersedes the review in flight; one paid run per revision
+jobs:
+  suite:
+    uses: public-software/.github/.github/workflows/review.yml@bc129a1ee535fc7b87f34bb97d78144a60979454 # v1.1.0
+    permissions:
+      contents: read
+      pull-requests: write
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

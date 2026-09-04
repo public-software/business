@@ -1,0 +1,16 @@
+# Dependabot bumps the SHA-pinned actions and the pinned public-software/.github reusable-workflow release
+# (rust.yml@<sha> # vX.Y.Z) — both the SHA and the version comment — and the crates in Cargo.lock.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly }
+    cooldown: { default-days: 7 }   # let a new release settle before it is proposed
+    groups:
+      actions: { patterns: ["*"] }
+  - package-ecosystem: cargo
+    directory: /
+    schedule: { interval: weekly }
+    cooldown: { default-days: 7 }
+    groups:
+      crates: { patterns: ["*"] }   # one pull request a week; `cargo vet` in CI holds every new version to an audit

@@ -1,0 +1,16 @@
+# CodeRabbit is the free second opinion on every pull request (free for public repositories): advisory only.
+# The blocking review is the agent gate ("suite / policy"); CodeRabbit never requests changes and never gates.
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: en-US
+tone_instructions: Terse and concrete. Name the file and the line. Skip praise.
+reviews:
+  profile: chill
+  request_changes_workflow: false   # advisory: comments, never a blocking review
+  high_level_summary: true
+  review_status: false              # no status comment; the summary and the inline comments are enough
+  poem: false
+  auto_review:
+    enabled: true
+    drafts: false
+chat:
+  auto_reply: true

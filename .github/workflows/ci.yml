@@ -2,7 +2,9 @@ name: ci
 on:
   push: { branches: [main, "release/**"] }
   pull_request:
+  merge_group:
+permissions:
+  contents: read   # the suite only reads the checkout
 jobs:
   suite:
-    uses: public-software/.github/.github/workflows/rust.yml@main
-    secrets: inherit
+    uses: public-software/.github/.github/workflows/rust.yml@bc129a1ee535fc7b87f34bb97d78144a60979454 # v1.1.0
