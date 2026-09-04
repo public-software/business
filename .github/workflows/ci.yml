@@ -7,4 +7,4 @@ permissions:
   contents: read   # the suite only reads the checkout
 jobs:
   suite:
-    uses: public-software/.github/.github/workflows/rust.yml@722dce0ec016d1c572269789a89e989199b24e1d # v1.1.1
+    uses: public-software/.github/.github/workflows/rust.yml@0143b99c390360ed1fd66e6c266ebbd74ad7d4cf # v2.0.0

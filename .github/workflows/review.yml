@@ -1,5 +1,6 @@
-# The agent review gate: "suite / policy" is a required check on main. Pull requests get the agent pass and the
-# deterministic checks; the merge queue reuses the verdict recorded on the pull request.
+# The agent review gate: "suite / policy" is a required check on main. Pull requests get the agent pass (the
+# GitHub Copilot CLI on this workflow's own token, billed to the organization: no secret) and the deterministic
+# checks; the merge queue reuses the verdict recorded on the pull request.
 name: review
 on:
   pull_request: { types: [opened, synchronize, reopened, ready_for_review] }
@@ -11,9 +12,8 @@ concurrency:
   cancel-in-progress: true   # a new push supersedes the review in flight; one paid run per revision
 jobs:
   suite:
-    uses: public-software/.github/.github/workflows/review.yml@722dce0ec016d1c572269789a89e989199b24e1d # v1.1.1
+    uses: public-software/.github/.github/workflows/review.yml@0143b99c390360ed1fd66e6c266ebbd74ad7d4cf # v2.0.0
     permissions:
       contents: read
       pull-requests: write
-    secrets:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      copilot-requests: write   # the agent's AI credits go to the organization's budget

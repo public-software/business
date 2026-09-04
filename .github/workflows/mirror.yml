@@ -7,7 +7,7 @@ permissions:
 jobs:
   mirror:
     if: ${{ vars.FORGE_MIRROR_URL != '' }}
-    uses: public-software/.github/.github/workflows/mirror.yml@722dce0ec016d1c572269789a89e989199b24e1d # v1.1.1
+    uses: public-software/.github/.github/workflows/mirror.yml@0143b99c390360ed1fd66e6c266ebbd74ad7d4cf # v2.0.0
     with:
       forge_url: ${{ vars.FORGE_MIRROR_URL }}
     secrets:
