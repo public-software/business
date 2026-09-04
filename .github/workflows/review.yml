@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true   # a new push supersedes the review in flight; one paid run per revision
 jobs:
   suite:
-    uses: public-software/.github/.github/workflows/review.yml@bc129a1ee535fc7b87f34bb97d78144a60979454 # v1.1.0
+    uses: public-software/.github/.github/workflows/review.yml@722dce0ec016d1c572269789a89e989199b24e1d # v1.1.1
     permissions:
       contents: read
       pull-requests: write
